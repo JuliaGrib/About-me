@@ -9,18 +9,91 @@
     <title>About me</title>
 </head>
 <body>
-    <header class="header">
-        <div class="wrapper">
-            <nav class="header__navigation">
-                <ul class="header__list">
-                    <li><a class="header__link" href="">Education</a></li>
-                    <li><a class="header__link" href="">Contacts</a></li>
-                    <li><a class="header__link" href="">Facts</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
+
+    <section class="facts">
+        <div class="facts__wrapper">
+            <div class="facts__info">
+                <h2 class="facts__title">Facts</h2>
+                <div class="facts__text">
+                    <div class="fatcs__subtitle">
+                        Some facts about me
+                    </div>
+                    <div class="fatcs__descr">
+                        Here I presented only some of the interesting facts about myself. To find out more, click on the card.
+                        
+                    </div>
+                    <div class="facts__line"></div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item" data-item="0">
+                    <div class="grid-item__subtitle">
+                        I walked 144 kilometers on holiday in Kazakhstan
+                        <img src="img/facts/arrow.svg" alt="">
+                    </div>
+                </div>
+                <div class="grid-item" data-item="1">
+                    <div class="grid-item__subtitle">
+                        I have friends from all previous jobs
+                        <img src="img/facts/arrow.svg" alt="">
+                    </div>
+                </div>
+                <div class="grid-item" data-item="2">
+                    <div class="grid-item__subtitle">
+                        Collecting socks since 2014
+                        <img src="img/facts/arrow.svg" alt="">
+                    </div>
+                </div>
+                <div class="grid-item" data-item="3">
+                    <div class="grid-item__subtitle">
+                        I am the best route planner
+                        <img src="img/facts/arrow.svg" alt="">
+                    </div>
+
+                </div>
+                <div class="grid-item" data-item="4">
+                    <div class="grid-item__subtitle">
+                        I'll go to the end of the world for delicious pizza
+                        <img src="img/facts/arrow.svg" alt="">
+                    </div>
+                </div>
+                <div class="grid-item" data-item="5">
+                    <div class="grid-item__subtitle">
+                        I have my own corn picking courses
+                        <img src="img/facts/arrow.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="wrapper">
+            
+        </div> -->
+    </section>
+
+    <div class="bakground-popup"></div>
+    <section class="popup">
+        <div class="popup__container">
+            <div class="popup__content">
+                <img class="popup__img" src="" alt="">
+            </div>
+            <div class="popup__text">
+                <h3 class="popup__title"></h3>
+                <p class="popup__descr">
+                </p>
+                <div class="popup__btn">
+                    <div class="popup__prev">
+                        <img src="img/facts/arrow-p-prew.svg" alt="">
+                    </div>
+                    <div class="popup__next">
+                        <img src="img/facts/arrow-p-next.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script/items.js"></script>
     <script src="script/script.js"></script>
 </body>
 </html>
