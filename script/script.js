@@ -1,3 +1,8 @@
+localStorage.getItem('lang') ? localStorage.getItem('lang') : localStorage.setItem('lang', 'en');
+
+
+const h1 = document.querySelector('h1');
+const langBtn = document.querySelectorAll('.lang__link');
 const gridItem = document.querySelectorAll('.grid-item');
 const gridTitle = document.querySelectorAll('.grid-item__subtitle');
 const backgroundPopup = document.querySelector('.bakground-popup');
@@ -7,6 +12,20 @@ const popupTitle = document.querySelector('.popup__title');
 const popupDescr = document.querySelector('.popup__descr');
 const popupNextBtn = document.querySelector('.popup__next');
 const popupPrevBtn = document.querySelector('.popup__prev');
+
+langBtn.forEach((elem) => {
+    if(elem.innerHTML === localStorage.getItem('lang')){
+        elem.classList.add('lang__link_active');
+    }
+})
+
+langBtn.forEach((elem) => {
+    elem.addEventListener('click', () =>{
+        localStorage.setItem('lang', `${elem.innerHTML}`);
+        document.querySelector('.lang__link_active').classList.remove('lang__link_active');
+        elem.classList.add('lang__link_active');
+    })
+})
 
 let count;
 
