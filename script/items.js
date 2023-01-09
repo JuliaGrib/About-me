@@ -31,4 +31,5 @@ const items = [
         "title": "I have my own corn picking courses",
         "descr": "I have developed an author's method of harvesting corn from the fields, after which you will be able to professionally harvest corn from the fields from August to September. And I already have my first graduates :)"
     },
+    
 ]
