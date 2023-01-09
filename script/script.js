@@ -1,6 +1,3 @@
-localStorage.getItem('lang') ? localStorage.getItem('lang') : localStorage.setItem('lang', 'en');
-
-
 const h1 = document.querySelector('h1');
 const langBtn = document.querySelectorAll('.lang__link');
 const gridItem = document.querySelectorAll('.grid-item');
@@ -12,20 +9,8 @@ const popupTitle = document.querySelector('.popup__title');
 const popupDescr = document.querySelector('.popup__descr');
 const popupNextBtn = document.querySelector('.popup__next');
 const popupPrevBtn = document.querySelector('.popup__prev');
-
-langBtn.forEach((elem) => {
-    if(elem.innerHTML === localStorage.getItem('lang')){
-        elem.classList.add('lang__link_active');
-    }
-})
-
-langBtn.forEach((elem) => {
-    elem.addEventListener('click', () =>{
-        localStorage.setItem('lang', `${elem.innerHTML}`);
-        document.querySelector('.lang__link_active').classList.remove('lang__link_active');
-        elem.classList.add('lang__link_active');
-    })
-})
+const burgerBtn = document.querySelector('.header__burger');
+const burgerMenu = document.querySelector('.burger__menu');
 
 let count;
 
@@ -72,3 +57,8 @@ popupPrevBtn.addEventListener('click', ()=> {
     makePopup(count);
 })
 
+burgerBtn.addEventListener('click', () => {
+    burgerBtn.classList.toggle('header__burger_transform');
+    burgerMenu.classList.toggle('burger__menu_active');
+    backgroundPopup.classList.toggle('active');
+})
