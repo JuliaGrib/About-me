@@ -5,17 +5,40 @@
 }
 
 :root {
-    --color-primary: #151517d0;
-    --color-white: #ffffffd0;
+    --color-primary: black;
+    --color-white: #ffffff;
+    --color-main: rgb(83 137 254);
+}
+
+html::-webkit-scrollbar {
+  width: 1px;
+  background-color: #f9f9fd;
+}
+html::-moz-scrollbar {
+  width: 1px;
+  background-color: #f9f9fd;
+}
+html::-ms-scrollbar {
+  width: 1px;
+  background-color: #f9f9fd;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: #223c50;
+}
+html::-moz-scrollbar-thumb {
+  background-color: #223c50;
+}
+html::-ms-scrollbar-thumb {
+  background-color: #223c50;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+
 body {
-  background-color: #221684;
-  
+  background-color: #221684;  
 }
 
 * {
@@ -24,7 +47,7 @@ body {
   
 
 .main, .info {
-  background-color: white;
+  background-color: var(--color-white);
   max-width: 1100px;
   margin: 40px auto;
   padding: 90px 50px;
@@ -69,18 +92,18 @@ body {
   padding-left: 10px;
 }
 
-.header__link, .lang__link, .education__link {
+.header__link, .lang__link, .info__link {
   font-size: 14px;
   text-decoration: none;
   color: grey;
   transition: 0.3s;
 
 }
-.education__link {
-  color: black;
+.info__link {
+  color: var(--color-primary);
 }
-.header__link:hover, .lang__link:hover, .education__link:hover {
-  color:rgb(83 137 254);
+.header__link:hover, .lang__link:hover, .info__link:hover {
+  color: var(--color-main);
 }
 
 .header__burger {
@@ -93,7 +116,7 @@ body {
   height: 240px;
   top: -240px;
   left: 0;
-  background-color: white;
+  background-color: var(--color-white);
   padding: 50px;
   transition: 0.8s;
   z-index: 2000;
@@ -101,7 +124,7 @@ body {
 
 .burger__link {
   text-decoration: none;
-  color: black;
+  color: var(--color-primary);
 }
 
 .education__courses {
@@ -113,7 +136,7 @@ body {
 }
 
 .lang__link_active {
-  color:rgb(83 137 254);
+  color:var(--color-main);
   text-decoration: underline;
 }
 
@@ -142,7 +165,7 @@ h1 {
 .main__line {
   width: 4px;
   margin: 0 30px 0 0;
-  background-color: rgb(83 137 254);
+  background-color: var(--color-main);
 }
 
 .main__descr {
@@ -177,25 +200,25 @@ h1 {
   justify-content: space-between;
 }
 
-.education__item {
+.info__item {
   display: flex;
   margin: 10px 0 10px 0;
 
 }
 
-.education__year {
-  color: rgb(83 137 254);
+.info__year {
+  color: var(--color-main);
   font-weight: 600;
   margin: 0 10px 0 0;
 }
 
-.edication__title, .edication__subtitle {
+.info__title, .info__subtitle {
   font-weight: 300;
 }
 
 .info__line {
   width: 4px;
-  background-color: rgb(83 137 254);
+  background-color: var(--color-main);
 }
 
 .education__wrapper {
@@ -207,10 +230,9 @@ h1 {
   margin: 30px 0 0 0;
 }
 
-  /* Факты */
-
 .facts {
-  background-color: white;
+  position: relative;
+  background-color: var(--color-white);
   max-width: 1100px;
   margin: 40px auto;
   padding: 90px 50px;
@@ -244,7 +266,7 @@ h1 {
 .fatcs__subtitle {
   font-size: 20px;
   font-weight: 600;
-  color: rgb(83 137 254);
+  color: var(--color-main);
 }
 
 .fatcs__descr {
@@ -258,10 +280,12 @@ h1 {
   margin: 20px 0 0 0;
   max-width: 100px;
   height: 1.5px;
-  background-color: rgb(83 137 254);
+  background-color: var(--color-main);
 }
 
 .grid-container {
+  position: relative;
+  z-index: 5;
   width: 100%;
   height: 400px;
   display: grid;
@@ -286,7 +310,7 @@ h1 {
 	left: 0;
 	width: 100%;
 	height: 100%;
-  background-color: rgb(83 137 254);
+  background-color: var(--color-main);
 	transition: 0.5s;
 }
 .grid-item:hover:before {
@@ -298,7 +322,7 @@ h1 {
   position: absolute;
   z-index: 500;
   font-size: 14px;
-  color: white;
+  color: var(--color-white);
   font-weight: 600;
 }
 
@@ -339,16 +363,16 @@ h1 {
   background: url('../img/facts/06.jpg') center center/cover no-repeat;
 
 }
+
+.facts__letter {
+  position: absolute;
+  bottom: 0;
+  left: 7%;
+  font-size: 125px;
+  font-weight: 700;
+  color: #80808014;
+}
   
-  
-
-
-
-
-
-
-
-
 .bakground-popup {
     display: none;
     position: fixed;
@@ -367,7 +391,7 @@ h1 {
     transform: translate(-50%, -30%);
     width: 700px;
     height: 336px;
-    background: white;
+    background: var(--color-white);
   }
 
 .active {
@@ -479,14 +503,14 @@ h1 {
     display: block;
     width: 100%;
     height: 2px;
-    background-color: rgb(83 137 254);
+    background-color: var(--color-main);
   }
   .header__burger::before {
     content: '';
     display: block;
     width: 100%;
     height: 2px;
-    background-color: rgb(83 137 254);
+    background-color: var(--color-main);
     margin: 0 0 5px 0;
    
   }
@@ -495,7 +519,7 @@ h1 {
     display: block;
     width: 100%;
     height: 2px;
-    background-color: rgb(83 137 254);
+    background-color: var(--color-main);
     margin: 5px 0 0 0;
    
   }
@@ -533,15 +557,20 @@ h1 {
   }
   .popup {
     width: 580px;
-    background: white;
-}
+    background: var(--color-white);
+  }
+
+  .facts__letter {
+
+    font-size: 98px;
+  }
 }
 
 
 @media (max-width: 640px) {
   
   .main__wrapper {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .main__img {
@@ -553,7 +582,7 @@ h1 {
   }
 
   .header__burger {
-    top: 4%;
+    top: 9%;
   }
 
   .education__info {
@@ -613,9 +642,13 @@ h1 {
   
 @media (max-width: 460px) {
 
+  .header__burger {
+    top: 6%;
+  }
+
   .main__img {
     margin: 38px 0 30px 0;
-}
+  }
   .main__letters {
     top: 67%;
     right: -32%;
@@ -647,13 +680,20 @@ h1 {
 }
 
 @media (max-width: 375px) {
+  .title, h1 {
+    font-size: 32px;
+  }
+  .main__text {
+
+    padding: 20px 0 0 0;
+}
   .main__letters {
     top: 75%;
     right: -24%;
     font-size: 50px;
-}
-.info__letters {
+  }
+  .info__letters {
 
-  font-size: 21px;
-}
+    font-size: 21px;
+  }
 }

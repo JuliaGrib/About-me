@@ -2,7 +2,7 @@ const items = [
     {
         "img" : "img/facts/01.png",
         "title": "I walked 144 kilometers on holiday in Kazakhstan",
-        "descr": "I was in Kazakhstan for only 16 days and every day I used it to the maximum. So every day I went to the mountains or walked around a new city. So it turned out that I went 144 kilometers and drove 3000 kilometers."
+        "descr": "I was in Kazakhstan for 16 days and I used each day to the maximum. So every day I went to the mountains or walked around a new city. So it turned out that I went 144 kilometers on foot"
     },
     {
         "img" : "img/facts/02.png",
