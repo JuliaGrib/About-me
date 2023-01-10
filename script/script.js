@@ -4,6 +4,8 @@ const gridItem = document.querySelectorAll('.grid-item');
 const gridTitle = document.querySelectorAll('.grid-item__subtitle');
 const backgroundPopup = document.querySelector('.bakground-popup');
 const popup = document.querySelector('.popup');
+const popupSliderRightBtn =document.querySelector('.right');
+const popupSliderLeftBtn =document.querySelector('.left');
 const popupImg = document.querySelector('.popup__img');
 const popupTitle = document.querySelector('.popup__title');
 const popupDescr = document.querySelector('.popup__descr');
@@ -16,7 +18,9 @@ const burgerLinks = document.querySelectorAll('.burger__link');
 const html = document.querySelector('html');
 
 
+
 let count;
+let num;
 
 gridItem.forEach((elem, index) => {
     elem.addEventListener('click', () => {
@@ -33,9 +37,10 @@ gridTitle.forEach((elem, index) => {
 })
 
 const makePopup = (count) => {
+    num = 0;
     backgroundPopup.classList.add('active');
     popup.classList.add('active');
-    popupImg.src = items[count].img;
+    popupImg.src = items[count].img[num];
     popupTitle.innerHTML = items[count].title;
     popupDescr.innerHTML = items[count].descr;
     html.classList.add("overflow-h");
@@ -79,4 +84,19 @@ burgerBtn.addEventListener('click', genBurgerMenu);
 
 burgerLinks.forEach((elem) => {
     elem.addEventListener('click', genBurgerMenu);
+})
+
+
+popupSliderRightBtn.addEventListener('click', ()=> {
+    if (num < items[count].img.length -1) {
+        ++num;
+    }  
+    popupImg.src = items[count].img[num];
+})
+
+popupSliderLeftBtn.addEventListener('click', ()=> {
+    if (num > 0) {
+        --num;
+    }  
+    popupImg.src = items[count].img[num];
 })
