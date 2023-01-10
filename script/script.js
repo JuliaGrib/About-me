@@ -9,10 +9,12 @@ const popupTitle = document.querySelector('.popup__title');
 const popupDescr = document.querySelector('.popup__descr');
 const popupNextBtn = document.querySelector('.popup__next');
 const popupPrevBtn = document.querySelector('.popup__prev');
+const popupCloseBtn = document.querySelector('.popup__close');
 const burgerBtn = document.querySelector('.header__burger');
 const burgerMenu = document.querySelector('.burger__menu');
 const burgerLinks = document.querySelectorAll('.burger__link');
 const html = document.querySelector('html');
+
 
 let count;
 
@@ -39,7 +41,7 @@ const makePopup = (count) => {
     html.classList.add("overflow-h");
 }
 
-const delPopup = () => {
+const closeBackgroundPopup = () => {
     backgroundPopup.classList.remove('active');
     popup.classList.remove('active');
     burgerBtn.classList.remove('header__burger_transform');
@@ -52,10 +54,9 @@ const genBurgerMenu = () => {
     burgerMenu.classList.toggle('burger__menu_active');
     backgroundPopup.classList.toggle('active');
     html.classList.toggle("overflow-h");
-    document.addEventListener('wheel', prevent, {passive: false});
-}
+};
  
-backgroundPopup.addEventListener('click', delPopup);
+backgroundPopup.addEventListener('click', closeBackgroundPopup);
 
 popupNextBtn.addEventListener('click', ()=> {
     ++count;
@@ -63,16 +64,18 @@ popupNextBtn.addEventListener('click', ()=> {
         count = 0;
     }
     makePopup(count);
-})
+});
 popupPrevBtn.addEventListener('click', ()=> {
     --count;
     if (count <= -1){
         count = 5;
     }
     makePopup(count);
-})
+});
 
-burgerBtn.addEventListener('click', genBurgerMenu)
+popupCloseBtn.addEventListener('click', closeBackgroundPopup);
+
+burgerBtn.addEventListener('click', genBurgerMenu);
 
 burgerLinks.forEach((elem) => {
     elem.addEventListener('click', genBurgerMenu);

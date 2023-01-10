@@ -458,6 +458,13 @@ h1 {
   cursor: pointer;
 }
 
+.popup__close {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  cursor: pointer;
+}
+
 
 @media (max-width: 1240px) {
   .facts__text {
