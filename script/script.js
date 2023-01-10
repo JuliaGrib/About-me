@@ -24,7 +24,7 @@ gridItem.forEach((elem, index) => {
 })
 
 gridTitle.forEach((elem, index) => {
-    elem.addEventListener('click', () => {
+    elem.addEventListener('click', (e) => {
         count = index;
         makePopup(count);
     })
@@ -36,7 +36,7 @@ const makePopup = (count) => {
     popupImg.src = items[count].img;
     popupTitle.innerHTML = items[count].title;
     popupDescr.innerHTML = items[count].descr;
-    // html.classList.toggle("overflow-h");
+    html.classList.add("overflow-h");
 }
 
 const delPopup = () => {
@@ -44,14 +44,15 @@ const delPopup = () => {
     popup.classList.remove('active');
     burgerBtn.classList.remove('header__burger_transform');
     burgerMenu.classList.remove('burger__menu_active');
-    // html.classList.toggle("overflow-h");
+    html.classList.remove("overflow-h");
 }
 
-const delBurgerMenu = () => {
+const genBurgerMenu = () => {
     burgerBtn.classList.toggle('header__burger_transform');
     burgerMenu.classList.toggle('burger__menu_active');
     backgroundPopup.classList.toggle('active');
-    // html.classList.toggle("overflow-h");
+    html.classList.toggle("overflow-h");
+    document.addEventListener('wheel', prevent, {passive: false});
 }
  
 backgroundPopup.addEventListener('click', delPopup);
@@ -71,8 +72,8 @@ popupPrevBtn.addEventListener('click', ()=> {
     makePopup(count);
 })
 
-burgerBtn.addEventListener('click', delBurgerMenu)
+burgerBtn.addEventListener('click', genBurgerMenu)
 
 burgerLinks.forEach((elem) => {
-    elem.addEventListener('click', delBurgerMenu);
+    elem.addEventListener('click', genBurgerMenu);
 })
