@@ -404,8 +404,8 @@ h1 {
 .popup__container {
     display: flex;
 }
-.popup__content {
-  flex-basis: 50%;
+.popup__slider {
+  position: relative;
   width: 350px;
   height: 336px;
 }
@@ -413,6 +413,19 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.left, .right {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  color:white
+}
+.left {
+  left: 2%;
+}
+.right {
+  right: 2%;
 }
 
 .popup__text {
@@ -633,7 +646,7 @@ h1 {
   .popup {
     max-width: 300px;
   }
-  .popup__content {
+  .popup__slider {
     display: none;
   }
   .popup__descr {
