@@ -39,7 +39,7 @@ const makePopup = (count) => {
     html.classList.add("overflow-h");
 }
 
-const delPopup = () => {
+const clickBacgroundPopup = () => {
     backgroundPopup.classList.remove('active');
     popup.classList.remove('active');
     burgerBtn.classList.remove('header__burger_transform');
@@ -52,10 +52,9 @@ const genBurgerMenu = () => {
     burgerMenu.classList.toggle('burger__menu_active');
     backgroundPopup.classList.toggle('active');
     html.classList.toggle("overflow-h");
-    document.addEventListener('wheel', prevent, {passive: false});
 }
  
-backgroundPopup.addEventListener('click', delPopup);
+backgroundPopup.addEventListener('click', clickBacgroundPopup);
 
 popupNextBtn.addEventListener('click', ()=> {
     ++count;
